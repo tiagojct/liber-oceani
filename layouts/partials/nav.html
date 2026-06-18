@@ -1,0 +1,24 @@
+{{ $cantos := where site.RegularPages "Section" "cantos" }}
+{{ $seq := $cantos.ByWeight }}
+{{ $idx := -1 }}
+{{ range $i, $p := $seq }}
+{{ if eq $p.RelPermalink $.RelPermalink }}{{ $idx = $i }}{{ end }}
+{{ end }}
+
+{{ if ge $idx 0 }}
+<nav class="page-nav">
+{{ if gt $idx 0 }}
+{{ $prev := index $seq (sub $idx 1) }}
+<a class="prev" href="{{ $prev.RelPermalink }}">&larr; {{ $prev.Title }}</a>
+{{ else }}
+<span></span>
+{{ end }}
+<a class="toc" href="{{ (site.GetPage "/cantos").RelPermalink }}">Cantos</a>
+{{ if lt (add $idx 1) (len $seq) }}
+{{ $next := index $seq (add $idx 1) }}
+<a class="next" href="{{ $next.RelPermalink }}">{{ $next.Title }} &rarr;</a>
+{{ else }}
+<span></span>
+{{ end }}
+</nav>
+{{ end }}

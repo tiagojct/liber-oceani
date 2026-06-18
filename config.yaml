@@ -8,6 +8,7 @@ markup:
   goldmark:
     renderer:
       unsafe: false
+      hardWraps: true
     extensions:
       typographer:
         disable: true

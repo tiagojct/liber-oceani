@@ -4,20 +4,50 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+<script>
+(function(){var raw=localStorage.getItem("liber-oceani.mode");if(raw){var m=raw;try{m=JSON.parse(raw);}catch(e){}if(m==="pergaminho"||m==="sepia"||m==="escuro"){document.documentElement.setAttribute("data-mode",m);}}})();
+</script>
+<script>
+(function(){var raw=localStorage.getItem("liber-oceani.fontSize");if(raw){var sz=parseInt(raw,10);if(sz>=14&&sz<=26){document.documentElement.style.fontSize=sz+"px";}}})();
+</script>
 {{ $css := resources.Get "css/main.css" | resources.ExecuteAsTemplate "css/main.css" . | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+{{ $jsOpts := dict "targetPath" "js/app.js" "minify" true "format" "esm" }}
+{{ $js := resources.Get "js/main.js" | js.Build $jsOpts | resources.Fingerprint }}
+<script type="module" src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
 </head>
 <body>
 <a class="skip" href="#main">Saltar para o conteúdo</a>
 <header class="site-header">
 <a class="site-title" href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a>
+<form class="site-search" role="search" data-pagefind-ignore>
+<label class="visually-hidden" for="site-search-input">Pesquisar</label>
+<input id="site-search-input" type="search" placeholder="Pesquisar" autocomplete="off" spellcheck="false">
+</form>
+<div class="header-tools">
+<div class="font-controls" role="group" aria-label="Tamanho da letra">
+<button type="button" class="font-smaller" aria-label="Diminuir letra">A&minus;</button>
+<button type="button" class="font-reset" aria-label="Repor letra">Repor</button>
+<button type="button" class="font-larger" aria-label="Aumentar letra">A+</button>
+</div>
+<div class="mode-toggle" role="group" aria-label="Modo de leitura">
+<button type="button" data-mode="pergaminho" aria-pressed="true">Pergaminho</button>
+<button type="button" data-mode="sepia" aria-pressed="false">Sépia</button>
+<button type="button" data-mode="escuro" aria-pressed="false">Escuro</button>
+</div>
+</div>
 </header>
 <main id="main">
 {{ block "main" . }}{{ end }}
 </main>
 <footer class="site-footer">
+{{ if and (eq .Section "cantos") (ne .Kind "section") }}
+{{ partial "nav.html" . }}
+{{ end }}
 <p class="site-colophon">
-<em>Liber Oceani</em> &mdash; companheiro de leitura para <em>Os Lusíadas</em> de Luís de Camões.
+<em>Liber Oceani</em> &mdash; companheiro de leitura para <em>Os Lusíadas</em> de Luís de Camões.<br>
+Texto do Project Gutenberg ebook 3333. Construído com <a href="https://gohugo.io/">Hugo</a>.
+<a href="https://github.com/tiagojct/liber-oceani">Código fonte</a>.
 </p>
 </footer>
 </body>

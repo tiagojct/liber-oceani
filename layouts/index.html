@@ -6,9 +6,30 @@
 
 {{ .Content }}
 
+<p class="home-start"><a class="home-start-link" href="{{ (index (where site.RegularPages "Section" "cantos").ByWeight 0).RelPermalink }}">Começar a ler &rarr;</a></p>
+
+{{ $cantos := where site.RegularPages "Section" "cantos" }}
+{{ $seed := now.Unix }}
+{{ $idx := mod $seed (len $cantos) }}
+{{ $canto := index ($cantos.ByWeight) $idx }}
+
+<aside class="home-daily" data-pagefind-ignore>
+<span class="home-daily-label">Canto do dia</span>
+<a class="home-daily-link" href="{{ $canto.RelPermalink }}">
+{{ with $canto.Params.roman }}<span class="home-daily-roman">{{ . }}</span>{{ end }}
+<span class="home-daily-title">{{ $canto.Title }}</span>
+</a>
+</aside>
+
+<aside id="resume-box" class="resume-box" hidden data-pagefind-ignore>
+<span class="resume-prefix">Retomar leitura</span>
+<a class="resume-link" href="#"><span class="resume-label"></span></a>
+</aside>
+
 <nav class="home-nav">
 <ul>
 <li><a href="{{ (site.GetPage "/cantos").RelPermalink }}">Cantos</a></li>
+<li><a href="{{ (site.GetPage "/sobre").RelPermalink }}">Sobre</a></li>
 </ul>
 </nav>
 {{ end }}

@@ -1,0 +1,19 @@
+baseURL: https://tiagojct.eu/liber-oceani/
+locale: pt-PT
+title: Liber Oceani
+enableEmoji: false
+enableRobotsTXT: true
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: false
+    extensions:
+      typographer:
+        disable: true
+
+permalinks:
+  cantos: /cantos/:slug/
+
+pagination:
+  pagerSize: 200

@@ -1,0 +1,14 @@
+{{ define "main" }}
+<header class="home-hero">
+<h1 class="home-title">{{ .Site.Title }}</h1>
+<p class="home-subtitle">Companheiro de leitura para <em>Os Lusíadas</em> de Luís de Camões</p>
+</header>
+
+{{ .Content }}
+
+<nav class="home-nav">
+<ul>
+<li><a href="{{ (site.GetPage "/cantos").RelPermalink }}">Cantos</a></li>
+</ul>
+</nav>
+{{ end }}

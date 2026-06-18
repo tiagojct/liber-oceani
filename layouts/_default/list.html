@@ -1,0 +1,16 @@
+{{ define "main" }}
+<header>
+<h1>{{ .Title }}</h1>
+</header>
+{{ .Content }}
+<ul class="canto-lista">
+{{ range .Pages.ByWeight }}
+<li>
+<a href="{{ .RelPermalink }}">
+{{ with .Params.roman }}<span class="num">{{ . }}</span>{{ end }}
+<span class="titulo">{{ .Title }}{{ with .Params.summary }}<span class="sumario">{{ . }}</span>{{ end }}</span>
+</a>
+</li>
+{{ end }}
+</ul>
+{{ end }}

@@ -1,0 +1,10 @@
+{{ define "main" }}
+<article{{ if eq .Section "cantos" }} class="canto"{{ end }}>
+<header>
+{{ with .Params.roman }}<p class="romano">{{ . }}</p>{{ end }}
+<h1>{{ .Title }}</h1>
+{{ with .Params.number }}<p class="canto-numero">Canto {{ . }}</p>{{ end }}
+</header>
+{{ .Content }}
+</article>
+{{ end }}

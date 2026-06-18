@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="pt" data-mode="pergaminho" data-basepath="{{ (urls.Parse site.BaseURL).Path }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+{{ $css := resources.Get "css/main.css" | resources.ExecuteAsTemplate "css/main.css" . | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+</head>
+<body>
+<a class="skip" href="#main">Saltar para o conteúdo</a>
+<header class="site-header">
+<a class="site-title" href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a>
+</header>
+<main id="main">
+{{ block "main" . }}{{ end }}
+</main>
+<footer class="site-footer">
+<p class="site-colophon">
+<em>Liber Oceani</em> &mdash; companheiro de leitura para <em>Os Lusíadas</em> de Luís de Camões.
+</p>
+</footer>
+</body>
+</html>

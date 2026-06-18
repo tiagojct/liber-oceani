@@ -1,0 +1,46 @@
+# Notas críticas para Os Lusíadas
+# Formato: canto:estancia: [notas]
+
+I.1:
+  - text: "A edição de 1572 (conhecida como 'Ee') traz 'E entre gente remota edificarão'. A edição 'E' corrige para 'Entre gente remota edificarão'. A emenda é aceite pela maioria dos editores modernos."
+    source: "Cf. Ramos, E.P. (ed.), Os Lusíadas, Porto Editora."
+
+I.4:
+  - text: "'Hipoerene' é grafia quinhentista para Hipocrene, a fonte que brotou do casco de Pégaso no monte Hélicon, consagrada às Musas."
+    source: "Ovídio, Metamorfoses, V."
+
+III.118-135:
+  - text: "O episódio de Inês de Castro baseia-se historicamente no assassinato de Inês em 1355, por ordem de D. Afonso IV. Camões segue a versão cronística de Fernão Lopes, mas acentua o lirismo e o pathos."
+    source: "Fernão Lopes, Crónica de D. Pedro I."
+
+IV.94-104:
+  - text: "O discurso do Velho do Restelo não tem fonte histórica conhecida — é criação de Camões. Representa uma voz dissidente dentro da própria epopeia, o que constitui uma inovação no género épico."
+    source: "Aguiar e Silva, V., Dicionário de Camões, s.v. 'Velho do Restelo'."
+
+V.37-60:
+  - text: "O Adamastor funde três tradições: Polifemo (Odisseia), os gigantes da mitologia clássica, e as lendas portuguesas de navegação sobre o Cabo das Tormentas. É uma criação original de Camões."
+    source: "Cf. Pierce, F., Os Lusíadas, Clarendon Press."
+
+V.44:
+  - text: "Bartolomeu Dias (c.1450-1500) foi o primeiro europeu a dobrar o Cabo da Boa Esperança (1488). Morreu num naufrágio na mesma região em 1500, na armada de Pedro Álvares Cabral. Camões apresenta este destino como cumprimento da profecia do Adamastor."
+    source: "Barros, J. de, Décadas da Ásia."
+
+VI.43-69:
+  - text: "A historicidade do episódio dos Doze de Inglaterra é disputada. A tradição data-o do reinado de D. João I (c. 1400) e associa-o à aliança luso-inglesa. Camões trata-o como facto histórico."
+    source: "Cf. Saraiva, A.J., Luís de Camões, Europa-América."
+
+VII.14:
+  - text: "O Samorim (do sânscrito samudra-raja, 'rei do mar') era o título do governante hindu de Calecute. Camões descreve o encontro diplomático entre Vasco da Gama e o Samorim com base nas crónicas contemporâneas."
+    source: "Castanheda, F.L. de, História do Descobrimento e Conquista da Índia pelos Portugueses."
+
+IX.18-95:
+  - text: "A Ilha dos Amores é uma alegoria complexa que admite múltiplas leituras: neoplatónica (o conhecimento como recompensa), política (o império como prémio), e autobiográfica (o Oriente sonhado vs. o Oriente real)."
+    source: "Sena, J. de, A Estrutura de Os Lusíadas, Portugália."
+
+X.76-143:
+  - text: "A Máquina do Mundo segue o modelo cosmológico de Ptolomeu, cristianizado pela teologia medieval. A descrição das esferas concêntricas ecoa o Somnium Scipionis de Cícero e o Paraíso de Dante."
+    source: "Cf. Aguiar e Silva, V., Camões: Labirinto e Fascínio."
+
+X.145:
+  - text: "O verso 'No mais, Musa, não posso' assinala o cansaço do poeta. O epílogo contrasta violentamente com a celebração da glória que domina o resto do poema — a 'austera, apagada e vil tristeza' do Portugal contemporâneo é apresentada como o reverso da medalha da epopeia."
+    source: "Saraiva, A.J., Para a História da Cultura em Portugal."

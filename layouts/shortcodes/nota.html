@@ -1,0 +1,11 @@
+{{- $canto := .Get "canto" -}}
+{{- $estancia := .Get "estancia" -}}
+{{- $key := printf "%s.%s" $canto $estancia -}}
+{{- $notas := index site.Data.notas $key -}}
+{{- if $notas -}}
+<aside class="nota-critica" role="note">
+{{- range $notas -}}
+<p>{{ .text }} <cite>{{ .source }}</cite></p>
+{{- end -}}
+</aside>
+{{- end -}}

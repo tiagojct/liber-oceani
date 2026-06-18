@@ -1,12 +1,27 @@
 {{ define "main" }}
-<article{{ if eq .Section "cantos" }} class="canto"{{ end }}>
+<article{{ if eq .Section "cantos" }} class="canto" data-canto-slug="{{ .File.BaseFileName }}"{{ end }}>
 <header>
 {{ with .Params.roman }}<p class="romano">{{ . }}</p>{{ end }}
 <h1>{{ .Title }}</h1>
 {{ with .Params.number }}<p class="canto-numero">Canto {{ . }}</p>{{ end }}
 </header>
 {{ if eq .Section "cantos" }}
-{{ partial "auto-anotar.html" (dict "content" (.Content | string) "page" .) }}
+  {{ $modern := site.GetPage (printf "/cantos-modernos/%s" .File.BaseFileName) }}
+  <div class="orto-controls" data-pagefind-ignore>
+    <button type="button" class="orto-btn active" data-orto="1572" aria-pressed="true">1572</button>
+    {{ if $modern }}
+    <button type="button" class="orto-btn" data-orto="moderna" aria-pressed="false">Moderna</button>
+    {{ end }}
+  </div>
+  <div class="orto-texto" data-orto="1572">
+    {{ partial "auto-anotar.html" (dict "content" (.Content | string) "page" .) }}
+  </div>
+  {{ if $modern }}
+  <div class="orto-texto" data-orto="moderna" hidden>
+    {{ $modernContent := $modern.Content }}
+    {{ partial "auto-anotar.html" (dict "content" ($modernContent | string) "page" .) }}
+  </div>
+  {{ end }}
 {{ else }}
 {{ .Content }}
 {{ end }}

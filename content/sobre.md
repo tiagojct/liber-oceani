@@ -18,9 +18,13 @@ O texto integral provém do Project Gutenberg ebook 3333.
 
 ## Ortografia
 
-O texto apresentado segue a ortografia original da edição de 1572. A
-funcionalidade de alternar para ortografia moderna estará disponível
-numa actualização futura.
+O texto padrão segue a ortografia da edição de 1572. Sempre que disponível,
+encontrará um seletor **1572 | Moderna** no topo de cada canto, permitindo
+alternar para a ortografia moderna. A sua preferência é guardada localmente.
+
+A modernização é aproximada — aplica regras sistemáticas de conversão
+ortográfica baseadas nas diferenças conhecidas entre o português quinhentista
+e o contemporâneo. Não substitui uma edição crítica.
 
 ## Fonte
 

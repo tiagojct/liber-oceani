@@ -838,6 +838,95 @@ html[data-mode="escuro"] .dst-azul    { background: rgba(120, 160, 220, 0.32); }
   overflow-y: auto;
 }
 
+/* ── Ortografia toggle ── */
+.orto-controls {
+  display: flex;
+  gap: 0;
+  margin: 2rem 0 1.6rem 0;
+  border: 1px solid var(--colour-border, #c4b89e);
+  border-radius: 6px;
+  overflow: hidden;
+  width: fit-content;
+}
+
+.orto-btn {
+  background: transparent;
+  border: none;
+  color: var(--colour-text, #2c2416);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.orto-btn:first-child { border-right: 1px solid var(--colour-border, #c4b89e); }
+
+.orto-btn.active,
+.orto-btn[aria-pressed="true"] {
+  background: var(--colour-accent, #2B5797);
+  color: #fff;
+}
+
+.orto-btn:not(.active):hover {
+  background: var(--colour-border, #c4b89e);
+}
+
+.orto-texto[hidden] { display: none; }
+
+/* ── Notas críticas ── */
+.nota-critica {
+  margin: 1.6rem 0;
+  padding: 1rem 1.2rem;
+  border-left: 3px solid var(--colour-accent, #2B5797);
+  background: rgba(43, 87, 151, 0.06);
+  font-size: 0.92em;
+  line-height: 1.55;
+}
+
+.nota-critica p { margin: 0 0 0.5rem 0; }
+.nota-critica p:last-child { margin-bottom: 0; }
+.nota-critica cite {
+  display: block;
+  font-size: 0.85em;
+  color: var(--colour-muted, #6b6b6b);
+  margin-top: 0.3rem;
+}
+
+/* ── Cronologia / tabelas ── */
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.6rem 0;
+  font-size: 0.92em;
+}
+
+.content th {
+  text-align: left;
+  padding: 0.5rem 0.6rem;
+  border-bottom: 2px solid var(--colour-accent, #2B5797);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.content td {
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid var(--colour-border, #c4b89e);
+  vertical-align: top;
+}
+
+.content tr:hover td { background: rgba(43, 87, 151, 0.04); }
+
+/* ── Mapa ── */
+.viagem-nota {
+  font-size: 0.85em;
+  color: var(--colour-muted, #6b6b6b);
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }

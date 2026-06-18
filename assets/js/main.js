@@ -6,6 +6,7 @@ import { initMarcadores } from "./marcadores.js";
 import { initDestaques } from "./destaques.js";
 import { initDados } from "./dados.js";
 import { initPesquisa } from "./pesquisa.js";
+import { initOrto } from "./orto.js";
 
 function start() {
   initFont();
@@ -16,6 +17,7 @@ function start() {
   initProgress();
   initDados();
   initPesquisa();
+  initOrto();
 }
 
 if (document.readyState === "loading") {

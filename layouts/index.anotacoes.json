@@ -1,0 +1,10 @@
+{{ $glossario := dict }}
+{{ range where site.RegularPages "Section" "glossario" }}
+  {{ $glossario = merge $glossario (dict .File.BaseFileName (dict "titulo" .Title "url" .RelPermalink "html" .Content)) }}
+{{ end }}
+{{ $personagens := dict }}
+{{ range where site.RegularPages "Section" "personagens" }}
+  {{ $personagens = merge $personagens (dict .File.BaseFileName (dict "titulo" .Title "url" .RelPermalink "html" .Content)) }}
+{{ end }}
+{{ $out := dict "glossario" $glossario "personagens" $personagens }}
+{{ $out | jsonify }}

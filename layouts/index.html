@@ -27,9 +27,25 @@
 </aside>
 
 <nav class="home-nav">
+<section class="home-nav-section">
+<h2 class="home-nav-heading">O Texto</h2>
 <ul>
 <li><a href="{{ (site.GetPage "/cantos").RelPermalink }}">Cantos</a></li>
-<li><a href="{{ (site.GetPage "/sobre").RelPermalink }}">Sobre</a></li>
+<li><a href="{{ (site.GetPage "/glossario").RelPermalink }}">Glossário</a></li>
+<li><a href="{{ (site.GetPage "/personagens").RelPermalink }}">Personagens</a></li>
 </ul>
+</section>
+<section class="home-nav-section">
+<h2 class="home-nav-heading">A tua leitura</h2>
+<ul>
+<li><a href="{{ (site.GetPage "/marcadores").RelPermalink }}">Marcadores</a></li>
+<li><a href="{{ (site.GetPage "/destaques").RelPermalink }}">Destaques</a></li>
+<li><a href="{{ (site.GetPage "/dados").RelPermalink }}">Os teus dados</a></li>
+</ul>
+</section>
 </nav>
+
+<footer class="home-about">
+<a href="{{ (site.GetPage "/sobre").RelPermalink }}">Sobre este site</a>
+</footer>
 {{ end }}

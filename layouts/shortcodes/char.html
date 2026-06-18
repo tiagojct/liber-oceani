@@ -1,0 +1,7 @@
+{{- $nome := .Get "nome" -}}
+{{- $entry := site.GetPage (printf "/personagens/%s" $nome) -}}
+{{- if $entry -}}
+<a class="anotar anotar-personagem" href="{{ $entry.RelPermalink }}" data-tipo="personagens" data-slug="{{ $nome }}">{{ .Inner | markdownify }}</a>
+{{- else -}}
+<span class="anotar anotar-em-falta">{{ .Inner | markdownify }}</span>
+{{- end -}}

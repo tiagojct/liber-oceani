@@ -7,7 +7,7 @@ enableRobotsTXT: true
 markup:
   goldmark:
     renderer:
-      unsafe: false
+      unsafe: true
       hardWraps: true
     extensions:
       typographer:
@@ -15,6 +15,16 @@ markup:
 
 permalinks:
   cantos: /cantos/:slug/
+
+outputFormats:
+  anotacoes:
+    mediaType: application/json
+    baseName: anotacoes
+    isPlainText: true
+    notAlternative: true
+
+outputs:
+  home: [HTML, RSS, anotacoes]
 
 pagination:
   pagerSize: 200

@@ -1,0 +1,7 @@
+{{- $term := .Get "termo" -}}
+{{- $entry := site.GetPage (printf "/glossario/%s" $term) -}}
+{{- if $entry -}}
+<a class="anotar anotar-glossario" href="{{ $entry.RelPermalink }}" data-tipo="glossario" data-slug="{{ $term }}">{{ .Inner | markdownify }}</a>
+{{- else -}}
+<span class="anotar anotar-em-falta">{{ .Inner | markdownify }}</span>
+{{- end -}}

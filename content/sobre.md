@@ -7,9 +7,20 @@ O texto integral provém do Project Gutenberg ebook 3333.
 
 ## Funcionalidades
 
-- Três modos de leitura: pergaminho, sépia e escuro.
-- Progresso de leitura guardado no navegador.
-- Texto em português europeu, ortografia original de 1572.
+- Três modos de leitura: pergaminho, sépia e escuro, seleccionáveis no
+  cabeçalho do site. A tua escolha é guardada localmente.
+- Glossário de termos de mitologia, geografia e história.
+- Perfis das personagens principais: deuses do Olimpo e figuras históricas
+  portuguesas.
+- Marcadores por estância e destaques de texto com três cores.
+- Todos os teus dados — marcadores, destaques, progresso — vivem no teu
+  navegador. Nada é enviado para um servidor.
+
+## Ortografia
+
+O texto apresentado segue a ortografia original da edição de 1572. A
+funcionalidade de alternar para ortografia moderna estará disponível
+numa actualização futura.
 
 ## Fonte
 

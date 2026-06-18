@@ -1,0 +1,16 @@
+{{- $content := .content -}}
+{{- range where site.RegularPages "Section" "glossario" -}}
+  {{- $term := .Title -}}
+  {{- $slug := .File.BaseFileName -}}
+  {{- $url := .RelPermalink -}}
+  {{- $wrap := printf `<a class="anotar anotar-glossario" href="%s" data-tipo="glossario" data-slug="%s">$1</a>` $url $slug -}}
+  {{- $content = replaceRE (printf "(?i)\\b(%s)\\b" $term) $wrap $content 1 -}}
+{{- end -}}
+{{- range where site.RegularPages "Section" "personagens" -}}
+  {{- $term := .Title -}}
+  {{- $slug := .File.BaseFileName -}}
+  {{- $url := .RelPermalink -}}
+  {{- $wrap := printf `<a class="anotar anotar-personagem" href="%s" data-tipo="personagens" data-slug="%s">$1</a>` $url $slug -}}
+  {{- $content = replaceRE (printf "(?i)\\b(%s)\\b" $term) $wrap $content 1 -}}
+{{- end -}}
+{{- $content | safeHTML -}}

@@ -5,6 +5,10 @@
 <h1>{{ .Title }}</h1>
 {{ with .Params.number }}<p class="canto-numero">Canto {{ . }}</p>{{ end }}
 </header>
+{{ if eq .Section "cantos" }}
+{{ partial "auto-anotar.html" (dict "content" (.Content | string) "page" .) }}
+{{ else }}
 {{ .Content }}
+{{ end }}
 </article>
 {{ end }}
